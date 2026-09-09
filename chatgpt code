@@ -1,0 +1,23 @@
+#include "AudioTools.h"
+#include "BluetoothA2DPSink.h"
+
+I2SStream out;
+BluetoothA2DPSink a2dp_sink(out);
+
+void setup() {
+  Serial.begin(115200);
+
+  auto config = out.defaultConfig(TX_MODE);
+
+  config.pin_bck = 26;
+  config.pin_ws = 25;
+  config.pin_data = 22;
+
+  out.begin(config);
+
+  a2dp_sink.start("ESP32_Audio");
+}
+
+void loop() {
+  delay(1000);
+}
