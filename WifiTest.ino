@@ -18,7 +18,7 @@ void setup() {
 void loop() {
   Serial.print("Connected Devices: ");
   Serial.println(WiFi.softAPgetStationNum());
-  delay(5000);
+  delay(5000); //test
   //hi 
   /*WiFiClient client = server.available();
   if(client){
